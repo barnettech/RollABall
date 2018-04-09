@@ -28,8 +28,9 @@ public class GroundSpawner : MonoBehaviour {
       lastPosition = playerPosition.transform.position;
       Debug.Log("distanceTravelled is " + distanceTravelled);
       if(distanceTravelled > .5 && flag == false) {
-          Rigidbody clone;
-          clone = Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(groundPosition.transform.position.x - 4, groundPosition.transform.position.y, groundPosition.transform.position.z + 48), Quaternion.identity);
+          GameObject clone;
+          clone = Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(groundPosition.transform.position.x, groundPosition.transform.position.y, groundPosition.transform.position.z + 48), Quaternion.identity);
+          clone.transform.rotation = groundPosition.transform.rotation;
           flag = true;
       }
         
@@ -37,4 +38,3 @@ public class GroundSpawner : MonoBehaviour {
     }
 
 }
-
