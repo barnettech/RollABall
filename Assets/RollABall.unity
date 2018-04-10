@@ -494,6 +494,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b835809e15906ac4c9a230e656be0792, type: 2}
+    - target: {fileID: 1664956114045796, guid: 996d0078d13844106ae4376fea0e4a0c, type: 2}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114352412987026586, guid: 996d0078d13844106ae4376fea0e4a0c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 996d0078d13844106ae4376fea0e4a0c, type: 2}
@@ -598,7 +602,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 1664956114045796, guid: 996d0078d13844106ae4376fea0e4a0c, type: 2}
-  speed: 10
+  speed: 50
   jump: {x: 0, y: 0, z: 0}
   countText: {fileID: 0}
   winText: {fileID: 0}
