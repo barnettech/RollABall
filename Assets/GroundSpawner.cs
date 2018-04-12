@@ -31,6 +31,7 @@ public class GroundSpawner : MonoBehaviour {
       if(distanceTravelled > 20 * tileCount ) {
           tileCount++;
           GameObject clone;
+          
           clone = Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(groundPosition.transform.position.x, groundPosition.transform.position.y, groundPosition.transform.position.z + 48 * tileCount), Quaternion.identity);
           clone.transform.rotation = groundPosition.transform.rotation;
           // flag = true;
@@ -40,10 +41,10 @@ public class GroundSpawner : MonoBehaviour {
  foreach (GameObject go in argo) {
    Debug.Log("tagged position is " + go.transform.position.z);
    Debug.Log("player position is " + playerPosition.transform.position.z);
-   if(go.transform.position.z < playerPosition.transform.position.z + 5) {
+   /*if(go.transform.position.z < playerPosition.transform.position.z + 5) {
      Debug.Log("in here");
      Destroy(go);
-   }
+   }*/
    // Debug.Log(go.name);
  }
         
