@@ -39,8 +39,8 @@ public class GroundSpawner : MonoBehaviour {
         
       GameObject[] argo = GameObject.FindGameObjectsWithTag("Ground");
  foreach (GameObject go in argo) {
-   Debug.Log("tagged position is " + go.transform.position.z);
-   Debug.Log("player position is " + playerPosition.transform.position.z);
+   //Debug.Log("tagged position is " + go.transform.position.z);
+   //Debug.Log("player position is " + playerPosition.transform.position.z);
    /*if(go.transform.position.z < playerPosition.transform.position.z + 5) {
      Debug.Log("in here");
      Destroy(go);

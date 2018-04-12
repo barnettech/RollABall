@@ -29,7 +29,7 @@ public class PickupSpawner : MonoBehaviour {
           int gemsThisRow = Random.Range(1, 4);
           for (int i = 0; i < gemsThisRow; i++) {
 				/*Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(26, Random.Range(-10, 10), 10), Quaternion.identity);*/
-                Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(groundPosition.transform.position.x, groundPosition.transform.position.y, groundPosition.transform.position.z + 48 * tileCount), Quaternion.identity);
+                Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(groundPosition.transform.position.x, groundPosition.transform.position.y, groundPosition.transform.position.z + 40 * tileCount), Quaternion.identity);
               
 			}
       }
