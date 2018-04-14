@@ -12,9 +12,7 @@ public class GroundSpawner : MonoBehaviour {
     private GameObject activePrefab;
     float distanceTravelled = 0;
     Vector3 lastPosition;
-    private bool flag = false;
     int tileCount = 0;
-    int tileToDelete = 0;
     public List<GameObject> groundlist;
     
 	// Use this for initialization
@@ -36,7 +34,6 @@ public class GroundSpawner : MonoBehaviour {
           tileCount++;
           GameObject activePrefab = Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(groundPosition.transform.position.x, groundPosition.transform.position.y, groundPosition.transform.position.z + 48 * tileCount), Quaternion.identity) as GameObject;
           activePrefab.transform.rotation = groundPosition.transform.rotation;
-          // flag = true;
           groundlist.Add(activePrefab);
           Debug.Log("here");
           Debug.Log("count is " + groundlist.Count);
@@ -45,7 +42,6 @@ public class GroundSpawner : MonoBehaviour {
             GameObject gameObjectToRemove = groundlist[0];
             groundlist.Remove(gameObjectToRemove);
             Destroy(gameObjectToRemove);
-            tileToDelete++;
           }
       }
       }

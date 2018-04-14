@@ -12,9 +12,11 @@ public class PlayerController : MonoBehaviour {
 
     private Rigidbody rb;
     private int count;
+    private GameObject playerPosition;
 
     void Start ()
     {
+        playerPosition = GameObject.Find("Player");
         rb = GetComponent<Rigidbody>();
         jump = new Vector3(0.0f, 2.0f, 0.0f);
         count = 0;
@@ -26,6 +28,9 @@ public class PlayerController : MonoBehaviour {
       if (Input.GetButtonDown("Jump")) {
          print("space key was pressed");
          rb.AddForce(jump * 2.0f, ForceMode.Impulse);
+      }
+      if(playerPosition.transform.position.y < -10) {
+           SetLoseText ();
       }
     }
 
@@ -56,6 +61,13 @@ public class PlayerController : MonoBehaviour {
         {
             winText.text = "You Win!";
         }
+    }
+    
+    void SetLoseText ()
+    {
+        
+        winText.text = "You Lose!";
+        
     }
     
 }
