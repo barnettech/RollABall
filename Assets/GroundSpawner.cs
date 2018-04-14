@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using System.Collections;
 
 public class GroundSpawner : MonoBehaviour {
@@ -8,10 +9,13 @@ public class GroundSpawner : MonoBehaviour {
     private GameObject playerLastPosition;
     private GameObject playerPosition;
     private GameObject groundPosition;
+    private GameObject activePrefab;
     float distanceTravelled = 0;
     Vector3 lastPosition;
     private bool flag = false;
     int tileCount = 0;
+    int tileToDelete = 0;
+    public List<GameObject> groundlist;
     
 	// Use this for initialization
 	void Start () {
@@ -28,27 +32,34 @@ public class GroundSpawner : MonoBehaviour {
       distanceTravelled += Vector3.Distance(playerPosition.transform.position, lastPosition);
       lastPosition = playerPosition.transform.position;
       // Debug.Log("tileCount is " + tileCount + " and distanceTravelled is " + distanceTravelled);
-      if(distanceTravelled > 20 * tileCount ) {
+      if(distanceTravelled > 10 * tileCount ) {
           tileCount++;
-          GameObject clone;
-          
-          clone = Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(groundPosition.transform.position.x, groundPosition.transform.position.y, groundPosition.transform.position.z + 48 * tileCount), Quaternion.identity);
-          clone.transform.rotation = groundPosition.transform.rotation;
+          GameObject activePrefab = Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(groundPosition.transform.position.x, groundPosition.transform.position.y, groundPosition.transform.position.z + 48 * tileCount), Quaternion.identity) as GameObject;
+          activePrefab.transform.rotation = groundPosition.transform.rotation;
           // flag = true;
+          groundlist.Add(activePrefab);
+          Debug.Log("here");
+          Debug.Log("count is " + groundlist.Count);
+          GameObject gameObjectToRemove1 = groundlist[1];
+          if(groundlist.Count > 20 && gameObjectToRemove1.transform.position.z < playerPosition.transform.position.z) {
+            GameObject gameObjectToRemove = groundlist[0];
+            groundlist.Remove(gameObjectToRemove);
+            Destroy(gameObjectToRemove);
+            tileToDelete++;
+          }
       }
-        
-      GameObject[] argo = GameObject.FindGameObjectsWithTag("Ground");
+      }
+    
+}
+    /*  GameObject[] argo = GameObject.FindGameObjectsWithTag("Ground");
  foreach (GameObject go in argo) {
-   //Debug.Log("tagged position is " + go.transform.position.z);
-   //Debug.Log("player position is " + playerPosition.transform.position.z);
-   /*if(go.transform.position.z < playerPosition.transform.position.z + 5) {
+     Destroy(go);
+   Debug.Log("tagged position is " + go.transform.position.z);
+   Debug.Log("player position is " + playerPosition.transform.position.z);
+   if(go.transform.position.z < playerPosition.transform.position.z + 5) {
      Debug.Log("in here");
      Destroy(go);
-   }*/
-   // Debug.Log(go.name);
- }
-        
-        
-    }
-
-}
+   }
+   Debug.Log(go.name);
+ } 
+    }*/
