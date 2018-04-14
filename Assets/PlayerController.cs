@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
     public GameObject[] prefabs;
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour {
     public Vector3 jump;
     public Text countText;
     public Text winText;
+    private bool restart = false;
 
     private Rigidbody rb;
     private int count;
@@ -32,6 +34,13 @@ public class PlayerController : MonoBehaviour {
       if(playerPosition.transform.position.y < -10) {
            SetLoseText ();
       }
+      if (restart)
+        {
+            if (Input.GetKeyDown (KeyCode.R))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name );
+            }
+       }
     }
 
     void FixedUpdate ()
@@ -66,7 +75,8 @@ public class PlayerController : MonoBehaviour {
     void SetLoseText ()
     {
         
-        winText.text = "You Lose!";
+        winText.text = "You Lose! Press R to restart.";
+        restart = true;
         
     }
     
