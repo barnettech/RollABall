@@ -44,8 +44,9 @@ public class GroundSpawner : MonoBehaviour {
       }
         GameObject[] tagged = GameObject.FindGameObjectsWithTag("Ground");
                foreach (GameObject obj in tagged) {
-                 Debug.Log("Here is the tagged " + obj);
-                 obj.transform.Rotate(Vector3.up * Time.deltaTime * 5.0f);
+                 // rotates the planes
+                 obj.transform.Rotate(Vector3.up * Time.deltaTime * 1.0f);
+                 //obj.transform.Rotate (new Vector3 (0, 0, 20) * Time.deltaTime);
                }
       }
     
