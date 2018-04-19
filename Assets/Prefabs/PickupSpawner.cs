@@ -35,8 +35,6 @@ public class PickupSpawner : MonoBehaviour {
           GameObject activePrefab = Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(groundPosition.transform.position.x, groundPosition.transform.position.y, groundPosition.transform.position.z + 48 * tileCount), Quaternion.identity) as GameObject;
           activePrefab.transform.rotation = groundPosition.transform.rotation;
           pickuplist.Add(activePrefab);
-          Debug.Log("here");
-          Debug.Log("count is " + pickuplist.Count);
           GameObject gameObjectToRemove1 = pickuplist[1];
           if(pickuplist.Count > 20 && gameObjectToRemove1.transform.position.z < playerPosition.transform.position.z) {
             GameObject gameObjectToRemove = pickuplist[0];

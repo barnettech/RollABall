@@ -196,7 +196,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 1783865551502552, guid: 2641e848db4bc4145b276b6a183a8a55, type: 2}
-  movementSpeed: 10
+  spawnDistance: 0
+  cratelist: []
 --- !u!136 &177305159
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -558,8 +559,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 1205243337814922, guid: 94f81a3d28de64af495522bb2d26a1f0, type: 2}
-  - {fileID: 100000, guid: 968ba461c44901f4e833fef979b48c1d, type: 3}
-  - {fileID: 100000, guid: 6b6696cce671505479700ed6b4c3d105, type: 3}
+  spawnDistance: 0
+  pickuplist: []
 --- !u!1 &452922771
 GameObject:
   m_ObjectHideFlags: 0

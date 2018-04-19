@@ -35,8 +35,6 @@ public class GroundSpawner : MonoBehaviour {
           GameObject activePrefab = Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(groundPosition.transform.position.x, groundPosition.transform.position.y, groundPosition.transform.position.z + 48 * tileCount), Quaternion.identity) as GameObject;
           activePrefab.transform.rotation = groundPosition.transform.rotation;
           groundlist.Add(activePrefab);
-          Debug.Log("here");
-          Debug.Log("count is " + groundlist.Count);
           GameObject gameObjectToRemove1 = groundlist[1];
           if(groundlist.Count > 20 && gameObjectToRemove1.transform.position.z < playerPosition.transform.position.z) {
             GameObject gameObjectToRemove = groundlist[0];
