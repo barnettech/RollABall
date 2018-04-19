@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour {
     }
     
     void Update() {
-      if (Input.GetButtonDown("Jump")) {
+      if (Input.GetButtonDown("Jump") && playerPosition.transform.position.y < 1) {
          print("space key was pressed");
          rb.AddForce(jump * 2.0f, ForceMode.Impulse);
       }

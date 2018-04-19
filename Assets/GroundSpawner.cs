@@ -42,6 +42,11 @@ public class GroundSpawner : MonoBehaviour {
             Destroy(gameObjectToRemove);
           }
       }
+        GameObject[] tagged = GameObject.FindGameObjectsWithTag("Ground");
+               foreach (GameObject obj in tagged) {
+                 Debug.Log("Here is the tagged " + obj);
+                 obj.transform.Rotate(Vector3.up * Time.deltaTime * 5.0f);
+               }
       }
     
 }
