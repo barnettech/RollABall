@@ -1,9 +1,18 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Collections;
+using System.Xml;
 
 public class CrateSpawner : MonoBehaviour {
 
+    XmlTextReader rssReader;
+    XmlDocument rssDoc;
+    XmlNode nodeRss;
+    XmlNode nodeChannel;
+    XmlNode nodeItem;
+    public string title;
+    public string description;
+    
 	public GameObject[] prefabs;
     public float spawnDistance;
     private GameObject playerLastPosition;
@@ -25,6 +34,8 @@ public class CrateSpawner : MonoBehaviour {
         playerPosition = GameObject.Find("Player");
         groundPosition = GameObject.Find("Ground1");
         lastPosition = playerPosition.transform.position;
+        
+        Rssreader rss = new Rssreader("http://www.barnettech.com/rss.xml");
 	}
 
 	// Update is called once per frame
@@ -58,5 +69,11 @@ public class CrateSpawner : MonoBehaviour {
         }
       }
     }
+    
+    void OnTriggerEnter(Collider other) {
+
+		// trigger question from an rss feed
+		
+	}
     
 }
