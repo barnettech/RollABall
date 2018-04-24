@@ -49,10 +49,8 @@ public class GroundSpawner : MonoBehaviour {
                  //randomrotate = Random.Range(1,3);
                  randomrotate = 1;
                  if(randomrotate == 1) {
-                   Debug.Log("positive");
                    obj.transform.Rotate(Vector3.up * Time.deltaTime * .75f);
                  } else if(randomrotate == 2) {
-                     Debug.Log("negative");
                      obj.transform.Rotate(Vector3.up * Time.deltaTime * -.75f);
                  }
                  //obj.transform.Rotate (new Vector3 (0, 0, 20) * Time.deltaTime);

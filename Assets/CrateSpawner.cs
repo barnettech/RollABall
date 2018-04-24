@@ -34,8 +34,6 @@ public class CrateSpawner : MonoBehaviour {
         playerPosition = GameObject.Find("Player");
         groundPosition = GameObject.Find("Ground1");
         lastPosition = playerPosition.transform.position;
-        
-        Rssreader rss = new Rssreader("http://www.barnettech.com/rss.xml");
 	}
 
 	// Update is called once per frame
@@ -69,11 +67,5 @@ public class CrateSpawner : MonoBehaviour {
         }
       }
     }
-    
-    void OnTriggerEnter(Collider other) {
-
-		// trigger question from an rss feed
-		
-	}
     
 }
