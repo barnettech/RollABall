@@ -8,6 +8,7 @@ TagManager:
   - coin
   - crate
   - Pick Up
+  - bird
   layers:
   - Default
   - TransparentFX

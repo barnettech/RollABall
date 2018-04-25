@@ -6,6 +6,7 @@ public class GroundSpawner : MonoBehaviour {
 
 	public GameObject[] prefabs;
     public float spawnDistance;
+    public float groundSpeed;
     private int randomrotate;
     private GameObject playerLastPosition;
     private GameObject playerPosition;
@@ -49,30 +50,11 @@ public class GroundSpawner : MonoBehaviour {
                  //randomrotate = Random.Range(1,3);
                  randomrotate = 1;
                  if(randomrotate == 1) {
-                   obj.transform.Rotate(Vector3.up * Time.deltaTime * .75f);
+                   obj.transform.Rotate(Vector3.up * Time.deltaTime * groundSpeed);
                  } else if(randomrotate == 2) {
-                     obj.transform.Rotate(Vector3.up * Time.deltaTime * -.75f);
+                     obj.transform.Rotate(Vector3.up * Time.deltaTime * -groundSpeed);
                  }
-                 //obj.transform.Rotate (new Vector3 (0, 0, 20) * Time.deltaTime);
                }
       }
-    
-      IEnumerator rotateRandom() {
-         // execute block of code here
-            GameObject[] tagged = GameObject.FindGameObjectsWithTag("Ground");
-               foreach (GameObject obj in tagged) {
-                 // rotates the planes
-                 randomrotate = Random.Range(1,3);
-                 if(randomrotate == 1) {
-                   Debug.Log("positive");
-                   obj.transform.Rotate(Vector3.up * Time.deltaTime * .75f);
-                 } else if(randomrotate == 2) {
-                     Debug.Log("negative");
-                     obj.transform.Rotate(Vector3.up * Time.deltaTime * -.75f);
-                 }
-                 //obj.transform.Rotate (new Vector3 (0, 0, 20) * Time.deltaTime);
-               }
-         yield return new WaitForSeconds(10.0f);
-  }
     
 }
