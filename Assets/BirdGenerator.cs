@@ -55,7 +55,7 @@ public class BirdGenerator : MonoBehaviour {
           go.transform.transform.Translate(Vector3.up * movementSpeedBirds * Time.deltaTime);
         }
         GameObject playerCurrent = GameObject.FindGameObjectWithTag ("Player");
-        Vector3 newPos = new Vector3(playerCurrent.transform.position.x, playerCurrent.transform.position.y, playerCurrent.transform.position.z - 20); 
+        Vector3 newPos = new Vector3(playerCurrent.transform.position.x, playerCurrent.transform.position.y, playerCurrent.transform.position.z - 5); 
         go.transform.position = Vector3.Lerp(go.transform.position, newPos, movementSpeedBirds * Time.deltaTime);
         /*GameObject playerCurrent = GameObject.FindGameObjectWithTag ("Player");
         Vector3 currentPlayerPosition = playerCurrent.transform.position;
