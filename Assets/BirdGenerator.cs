@@ -42,7 +42,8 @@ public class BirdGenerator : MonoBehaviour {
           activePrefab.transform.LookAt(currentPlayerPosition);
           birdlist.Add(activePrefab);
           GameObject gameObjectToRemove1 = birdlist[1];
-          if(birdlist.Count > 20 && gameObjectToRemove1.transform.position.z < playerPosition.transform.position.z) {
+          if(birdlist.Count > 5 && gameObjectToRemove1.transform.position.z < playerPosition.transform.position.z) {
+            Debug.Log("DESTROYING THE BIRD OBJECT");
             GameObject gameObjectToRemove = birdlist[0];
             birdlist.Remove(gameObjectToRemove);
             Destroy(gameObjectToRemove);
@@ -54,8 +55,14 @@ public class BirdGenerator : MonoBehaviour {
           go.transform.transform.Translate(Vector3.up * movementSpeedBirds * Time.deltaTime);
         }
         GameObject playerCurrent = GameObject.FindGameObjectWithTag ("Player");
+        Vector3 newPos = new Vector3(playerCurrent.transform.position.x, playerCurrent.transform.position.y, playerCurrent.transform.position.z - 20); 
+        go.transform.position = Vector3.Lerp(go.transform.position, newPos, movementSpeedBirds * Time.deltaTime);
+        /*GameObject playerCurrent = GameObject.FindGameObjectWithTag ("Player");
         Vector3 currentPlayerPosition = playerCurrent.transform.position;
-        go.transform.position = Vector3.Lerp(go.transform.position, playerCurrent.transform.position, movementSpeedBirds * Time.deltaTime);
+        GameObject birdDestinationPosition = playerCurrent;
+        Vector3 newPos = new Vector3(playerCurrent.transform.position.x, playerCurrent.transform.position.y, playerCurrent.transform.position.z - 20); 
+        birdDestinationPosition.transform.position = newPos;*/
+        //go.transform.position = Vector3.Lerp(go.transform.position, birdDestinationPosition.transform.position, movementSpeedBirds * Time.deltaTime);
     
         /*if(go.transform.position.y < 5 && goup) {
           go.transform.transform.Translate(Vector3.up * movementSpeedBirds * Time.deltaTime);
