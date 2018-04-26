@@ -27,7 +27,6 @@ public class QuestionController : MonoBehaviour {
 	void Update () {
         Debug.Log("show question is " + showQuestion);
         if(showQuestion) {
-          Debug.Log("show the question now");
           theQuestionText.text = "first question";
           //theQuestionText.gameObject.SetActive(true);
           theDropdown.gameObject.SetActive(true);

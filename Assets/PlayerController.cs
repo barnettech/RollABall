@@ -27,10 +27,10 @@ public class PlayerController : MonoBehaviour {
     }
     
     void Update() {
-      if (Input.GetButtonDown("Jump") && playerPosition.transform.position.y < 1) {
+      /*if (playerPosition.transform.position.y < 5 && playerPosition.transform.position.y < 1 && Input.GetButtonDown("Jump")) {
          print("space key was pressed");
          rb.AddForce(jump * 2.0f, ForceMode.Impulse);
-      }
+      }*/
       if(playerPosition.transform.position.y < -10) {
            SetLoseText ();
       }
