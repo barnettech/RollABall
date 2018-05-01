@@ -16,6 +16,8 @@ public class GroundSpawner : MonoBehaviour {
     Vector3 lastPosition;
     int tileCount = 0;
     public List<GameObject> groundlist;
+    Vector3 oldEulerAngles;
+    private int multiplier;
     
 	// Use this for initialization
 	void Start () {
@@ -25,6 +27,7 @@ public class GroundSpawner : MonoBehaviour {
         playerPosition = GameObject.Find("Player");
         groundPosition = GameObject.Find("Ground1");
         lastPosition = playerPosition.transform.position;
+        randomrotate = 1;
 	}
 
 	// Update is called once per frame
@@ -32,10 +35,11 @@ public class GroundSpawner : MonoBehaviour {
       distanceTravelled += Vector3.Distance(playerPosition.transform.position, lastPosition);
       lastPosition = playerPosition.transform.position;
       // Debug.Log("tileCount is " + tileCount + " and distanceTravelled is " + distanceTravelled);
-      if(distanceTravelled > 10 * tileCount ) {
+      if(distanceTravelled > 2 * tileCount ) {
           tileCount++;
-          GameObject activePrefab = Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(groundPosition.transform.position.x, groundPosition.transform.position.y, groundPosition.transform.position.z + 48 * tileCount), Quaternion.identity) as GameObject;
-          activePrefab.transform.rotation = groundPosition.transform.rotation;
+          GameObject activePrefab = Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(groundPosition.transform.position.x, lastPosition.y - (30 * tileCount), groundPosition.transform.position.z + 48 * tileCount), Quaternion.AngleAxis(-45, Vector3.up)) as GameObject;
+          //activePrefab.transform.rotation = groundPosition.transform.rotation;
+          //activePrefab.transform.Rotate(50, 0, 0);
           groundlist.Add(activePrefab);
           GameObject gameObjectToRemove1 = groundlist[1];
           if(groundlist.Count > 20 && gameObjectToRemove1.transform.position.z < playerPosition.transform.position.z) {
@@ -46,14 +50,18 @@ public class GroundSpawner : MonoBehaviour {
       }
         GameObject[] tagged = GameObject.FindGameObjectsWithTag("Ground");
                foreach (GameObject obj in tagged) {
-                 // rotates the planes
-                 //randomrotate = Random.Range(1,3);
-                 randomrotate = 1;
-                 if(randomrotate == 1) {
-                   obj.transform.Rotate(Vector3.up * Time.deltaTime * groundSpeed);
-                 } else if(randomrotate == 2) {
-                     obj.transform.Rotate(Vector3.up * Time.deltaTime * -groundSpeed);
+                 if (oldEulerAngles == obj.transform.rotation.eulerAngles){
+                   if(randomrotate == 1) {
+                     multiplier = 1;
+                   } else {
+                     multiplier = -1;
+                   }
                  }
+                 
+                 Vector3 direction = new Vector3(25, 34 * multiplier, 0);
+                 Quaternion targetRotation = Quaternion.Euler(direction); 
+                 obj.transform.rotation = Quaternion.Lerp(obj.transform.rotation, targetRotation, Time.deltaTime * .74f);
+                 oldEulerAngles = obj.transform.rotation.eulerAngles;
                }
       }
     
