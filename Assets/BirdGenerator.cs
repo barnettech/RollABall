@@ -38,7 +38,7 @@ public class BirdGenerator : MonoBehaviour {
           tileCount++;
           for(int i = 0; i < Random.Range(0,8); i++) {
             Debug.Log("i is " + i);
-            GameObject activePrefab = Instantiate(birdPrefabs[Random.Range(0, birdPrefabs.Length)], new Vector3(groundPosition.transform.position.x + (Random.Range(-4, 4)), groundPosition.transform.position.y + 2, groundPosition.transform.position.z + 48 * tileCount), Quaternion.identity) as GameObject;
+            GameObject activePrefab = Instantiate(birdPrefabs[Random.Range(0, birdPrefabs.Length)], new Vector3(groundPosition.transform.position.x + (Random.Range(-4, 4)), groundPosition.transform.position.y - (30 * tileCount), groundPosition.transform.position.z + 48 * tileCount), Quaternion.identity) as GameObject;
 		    activePrefab.transform.localScale = new Vector3(2.0f, 2.0f, 2.0f);
             GameObject playerCurrent = GameObject.FindGameObjectWithTag ("Player");
             Vector3 currentPlayerPosition = playerCurrent.transform.position;

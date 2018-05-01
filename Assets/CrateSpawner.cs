@@ -43,7 +43,7 @@ public class CrateSpawner : MonoBehaviour {
       // Debug.Log("tileCount is " + tileCount + " and distanceTravelled is " + distanceTravelled);
       if(distanceTravelled > 10 * tileCount ) {
           tileCount++;
-          GameObject activePrefab = Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(groundPosition.transform.position.x, groundPosition.transform.position.y, groundPosition.transform.position.z + 48 * tileCount), Quaternion.identity) as GameObject;
+          GameObject activePrefab = Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(groundPosition.transform.position.x, groundPosition.transform.position.y - (30 * tileCount), groundPosition.transform.position.z + 48 * tileCount), Quaternion.identity) as GameObject;
           activePrefab.transform.rotation = groundPosition.transform.rotation;
           cratelist.Add(activePrefab);
           GameObject gameObjectToRemove1 = cratelist[1];
