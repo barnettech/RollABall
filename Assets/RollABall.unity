@@ -1065,7 +1065,7 @@ Prefab:
         type: 2}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 13400000, guid: 5c7f05c57a10b4939abf4e02b71f325f,
+      objectReference: {fileID: 13400000, guid: dc9febdb0accb413cbc0e641e80ad4ea,
         type: 2}
     m_RemovedComponents:
     - {fileID: 114352412987026586, guid: 996d0078d13844106ae4376fea0e4a0c, type: 2}
@@ -1571,7 +1571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabs: []
   speed: 10
-  jump: {x: 0, y: 0, z: 0}
+  jump: {x: 5, y: 5, z: 5}
   countText: {fileID: 285721750}
   winText: {fileID: 947451544}
 --- !u!1001 &1553779569
@@ -2380,6 +2380,10 @@ Prefab:
     - target: {fileID: 5426510, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 2}
       propertyPath: m_Mass
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11469404, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 2}
+      propertyPath: m_MoveSpeedMultiplier
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 2}
