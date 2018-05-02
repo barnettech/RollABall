@@ -30,10 +30,10 @@ public class PlayerController : MonoBehaviour {
     }
     
     void Update() {
-      /*if (playerPosition.transform.position.y < 5 && playerPosition.transform.position.y < 1 && Input.GetButtonDown("Jump")) {
+      if (playerPosition.transform.position.y < 5 && playerPosition.transform.position.y < 1 && Input.GetButtonDown("Jump")) {
          print("space key was pressed");
          rb.AddForce(jump * 2.0f, ForceMode.Impulse);
-      }*/
+      }
       time += Time.deltaTime;
  
       var minutes = time / 60; //Divide the guiTime by sixty to get the minutes.

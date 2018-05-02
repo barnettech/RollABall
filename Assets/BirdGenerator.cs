@@ -34,11 +34,11 @@ public class BirdGenerator : MonoBehaviour {
       distanceTravelled += Vector3.Distance(playerPosition.transform.position, lastPosition);
       lastPosition = playerPosition.transform.position;
       // Debug.Log("tileCount is " + tileCount + " and distanceTravelled is " + distanceTravelled);
-      if(distanceTravelled > 10 * tileCount ) {
+      if(distanceTravelled > Random.Range(10,20) * tileCount ) {
           tileCount++;
           for(int i = 0; i < Random.Range(0,8); i++) {
             Debug.Log("i is " + i);
-            GameObject activePrefab = Instantiate(birdPrefabs[Random.Range(0, birdPrefabs.Length)], new Vector3(groundPosition.transform.position.x + (Random.Range(-4, 4)), groundPosition.transform.position.y - (30 * tileCount), groundPosition.transform.position.z + 48 * tileCount), Quaternion.identity) as GameObject;
+            GameObject activePrefab = Instantiate(birdPrefabs[Random.Range(0, birdPrefabs.Length)], new Vector3(groundPosition.transform.position.x + (Random.Range(-4, 4)), groundPosition.transform.position.y - (Random.Range(20, 30) * tileCount), groundPosition.transform.position.z + 48 * tileCount), Quaternion.identity) as GameObject;
 		    activePrefab.transform.localScale = new Vector3(2.0f, 2.0f, 2.0f);
             GameObject playerCurrent = GameObject.FindGameObjectWithTag ("Player");
             Vector3 currentPlayerPosition = playerCurrent.transform.position;
