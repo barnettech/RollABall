@@ -42,10 +42,10 @@ public class PlayerController : MonoBehaviour {
  
       //update the label value
       timerLabel.text = string.Format ("{0:00} : {1:00} : {2:000}", minutes, seconds, fraction);
-      Debug.Log("y is " + GroundSpawner.groundlist[GroundSpawner.groundlist.Count].transform.position.y);
-      if(playerPosition.transform.position.y < GroundSpawner.groundlist[GroundSpawner.groundlist.Count].transform.position.y) {
+      //Debug.Log("y is " + GroundSpawner.groundlist[GroundSpawner.groundlist.Count].transform.position.y);
+      /*if(playerPosition.transform.position.y < GroundSpawner.groundlist[GroundSpawner.groundlist.Count].transform.position.y) {
            SetLoseText ();
-      }
+      }*/
       if (restart)
         {
             if (Input.GetKeyDown (KeyCode.R))
@@ -78,6 +78,11 @@ public class PlayerController : MonoBehaviour {
           Debug.Log("Collided2");
           QuestionController.showQuestion = true;
         }
+        
+        if (other.gameObject.CompareTag ("bird"))
+        {
+            SetLoseText2();
+        }
     }
 
     void SetCountText ()
@@ -93,6 +98,14 @@ public class PlayerController : MonoBehaviour {
     {
         
         winText.text = "You Lose! Press R to restart.";
+        restart = true;
+        
+    }
+    
+    void SetLoseText2 ()
+    {
+        
+        winText.text = "You Lose, the birds got to your bagel, ate some, and it's no longer usable! Press R to restart.";
         restart = true;
         
     }

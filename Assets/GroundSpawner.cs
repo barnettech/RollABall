@@ -37,10 +37,11 @@ public class GroundSpawner : MonoBehaviour {
       // Debug.Log("tileCount is " + tileCount + " and distanceTravelled is " + distanceTravelled);
       if(distanceTravelled > 2 * tileCount ) {
           tileCount++;
-          GameObject activePrefab = Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(groundPosition.transform.position.x, lastPosition.y - (30 * tileCount), groundPosition.transform.position.z + 48 * tileCount), Quaternion.AngleAxis(-45, Vector3.up)) as GameObject;
+          GameObject activePrefab = Instantiate(prefabs[0], new Vector3(groundPosition.transform.position.x, lastPosition.y - (30 * tileCount), groundPosition.transform.position.z + 48 * tileCount), Quaternion.AngleAxis(-45, Vector3.up)) as GameObject;
           //activePrefab.transform.rotation = groundPosition.transform.rotation;
           //activePrefab.transform.Rotate(50, 0, 0);
           groundlist.Add(activePrefab);
+          groundPosition = groundlist[groundlist.Count];
           GameObject gameObjectToRemove1 = groundlist[1];
           if(groundlist.Count > 20 && gameObjectToRemove1.transform.position.z < playerPosition.transform.position.z) {
             GameObject gameObjectToRemove = groundlist[0];

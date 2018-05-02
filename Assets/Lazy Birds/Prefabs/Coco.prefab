@@ -50,6 +50,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4842255124326478}
   - component: {fileID: 95803485298008796}
+  - component: {fileID: 65599047127107602}
   m_Layer: 0
   m_Name: Coco
   m_TagString: bird
@@ -244,6 +245,18 @@ Transform:
   m_Father: {fileID: 4800949667273788}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65599047127107602
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1305410896935532}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95803485298008796
 Animator:
   serializedVersion: 3

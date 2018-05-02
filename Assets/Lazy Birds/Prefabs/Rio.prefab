@@ -111,6 +111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4326014640229618}
   - component: {fileID: 95796128693275080}
+  - component: {fileID: 65802297999201968}
   m_Layer: 0
   m_Name: Rio
   m_TagString: bird
@@ -244,6 +245,18 @@ Transform:
   m_Father: {fileID: 4035693608935906}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65802297999201968
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848137776097506}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95796128693275080
 Animator:
   serializedVersion: 3

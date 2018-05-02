@@ -1308,7 +1308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1321,7 +1321,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 1
-    m_MaxSize: 34
+    m_MaxSize: 20
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1486,7 +1486,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4634085824141414, guid: 0e82c5c091ad2fc4fb8f62cd247366b0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 13.402323
+      value: 27.72
       objectReference: {fileID: 0}
     - target: {fileID: 4634085824141414, guid: 0e82c5c091ad2fc4fb8f62cd247366b0, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2215,7 +2215,6 @@ MonoBehaviour:
   - {fileID: 1664956114045796, guid: 996d0078d13844106ae4376fea0e4a0c, type: 2}
   spawnDistance: 5
   groundSpeed: 0.745
-  groundlist: []
 --- !u!1001 &1922895473
 Prefab:
   m_ObjectHideFlags: 0

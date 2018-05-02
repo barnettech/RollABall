@@ -50,6 +50,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4833312397408520}
   - component: {fileID: 95945733994149192}
+  - component: {fileID: 65301157705956650}
   m_Layer: 0
   m_Name: Skittles
   m_TagString: bird
@@ -186,6 +187,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65301157705956650
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1715656802159138}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95945733994149192
 Animator:
   serializedVersion: 3

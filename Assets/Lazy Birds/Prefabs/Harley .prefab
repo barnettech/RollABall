@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4311295331659138}
   - component: {fileID: 95269879776215192}
+  - component: {fileID: 65980797997430840}
   m_Layer: 0
   m_Name: 'Harley '
   m_TagString: bird
@@ -244,6 +245,18 @@ Transform:
   m_Father: {fileID: 4454594143583012}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65980797997430840
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1005596225482618}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95269879776215192
 Animator:
   serializedVersion: 3
