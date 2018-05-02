@@ -15,7 +15,7 @@ public class GroundSpawner : MonoBehaviour {
     float distanceTravelled = 0;
     Vector3 lastPosition;
     int tileCount = 0;
-    public List<GameObject> groundlist;
+    public static List<GameObject> groundlist;
     Vector3 oldEulerAngles;
     private int multiplier;
     

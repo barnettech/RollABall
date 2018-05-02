@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour {
     public Vector3 jump;
     public Text countText;
     public Text winText;
+    public Text timerLabel;
+    private float time;
+    
     private bool restart = false;
 
     private Rigidbody rb;
@@ -31,7 +34,16 @@ public class PlayerController : MonoBehaviour {
          print("space key was pressed");
          rb.AddForce(jump * 2.0f, ForceMode.Impulse);
       }*/
-      if(playerPosition.transform.position.y < -10) {
+      time += Time.deltaTime;
+ 
+      var minutes = time / 60; //Divide the guiTime by sixty to get the minutes.
+      var seconds = time % 60;//Use the euclidean division for the seconds.
+      var fraction = (time * 100) % 100;
+ 
+      //update the label value
+      timerLabel.text = string.Format ("{0:00} : {1:00} : {2:000}", minutes, seconds, fraction);
+      Debug.Log("y is " + GroundSpawner.groundlist[GroundSpawner.groundlist.Count].transform.position.y);
+      if(playerPosition.transform.position.y < GroundSpawner.groundlist[GroundSpawner.groundlist.Count].transform.position.y) {
            SetLoseText ();
       }
       if (restart)
