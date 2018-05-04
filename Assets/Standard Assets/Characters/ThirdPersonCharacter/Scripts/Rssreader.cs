@@ -7,10 +7,10 @@ public class Rssreader
 {
     XmlTextReader rssReader;
     XmlDocument rssDoc;
-    XmlNode nodeRss;
-    XmlNode nodeChannel;
-    XmlNode nodeItem;
-    public channel rowNews;
+    public static XmlNode nodeRss;
+    public static XmlNode nodeChannel;
+    public static XmlNode nodeItem;
+    public static channel rowNews;
  
     // this is the root channel information within the RSS
     // I have supplied the fields here that are in the UNITY RSS feed

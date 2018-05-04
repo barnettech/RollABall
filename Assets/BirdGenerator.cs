@@ -59,12 +59,12 @@ public class BirdGenerator : MonoBehaviour {
         float dist = Vector3.Distance(go.transform.position, playerPosition.transform.position);
         //Debug.Log("Distance to other: " + dist);
         if(dist < 10) {
-          if(go.transform.position.y < groundPosition.transform.position.y + 2) {
+          if(go.transform.position.y < groundPosition.transform.position.y + 5) {
             go.transform.transform.Translate(Vector3.up * Random.Range(0.45f, 2) * Time.deltaTime);
           }
           GameObject playerCurrent = GameObject.FindGameObjectWithTag ("Player");
           Vector3 newPos = new Vector3(playerCurrent.transform.position.x, playerCurrent.transform.position.y, playerCurrent.transform.position.z - 1); 
-          go.transform.position = Vector3.Lerp(go.transform.position, newPos, Random.Range(0.45f, 2) * Time.deltaTime);
+          go.transform.position = Vector3.Lerp(go.transform.position, newPos, Random.Range(0.45f, 1) * Time.deltaTime);
         }
       }
     }

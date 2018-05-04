@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour {
             count = count + 1;
             SetCountText ();
         }
-        if (other.gameObject.CompareTag ( "crate" )) {
+        if (other.gameObject.CompareTag ( "crate" ) || other.gameObject.CompareTag ("bird")) {
 		  // trigger question from an rss feed
           Debug.Log("Collided2");
           QuestionController.showQuestion = true;
@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour {
         
         if (other.gameObject.CompareTag ("bird"))
         {
-            SetLoseText2();
+            //SetLoseText2();
         }
     }
 
