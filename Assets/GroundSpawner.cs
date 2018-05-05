@@ -35,7 +35,7 @@ public class GroundSpawner : MonoBehaviour {
       distanceTravelled += Vector3.Distance(playerPosition.transform.position, lastPosition);
       lastPosition = playerPosition.transform.position;
       // Debug.Log("tileCount is " + tileCount + " and distanceTravelled is " + distanceTravelled);
-      if(distanceTravelled > 2 * tileCount ) {
+      if(distanceTravelled > 40 * tileCount ) {
           tileCount++;
           GameObject activePrefab = Instantiate(prefabs[0], new Vector3(groundPosition.transform.position.x, lastPosition.y - (30 * tileCount), groundPosition.transform.position.z + 48 * tileCount), Quaternion.AngleAxis(-45, Vector3.up)) as GameObject;
           //activePrefab.transform.rotation = groundPosition.transform.rotation;

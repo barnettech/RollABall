@@ -32,8 +32,8 @@ public class PickupSpawner : MonoBehaviour {
       // Debug.Log("tileCount is " + tileCount + " and distanceTravelled is " + distanceTravelled);
       if(distanceTravelled > 10 * tileCount ) {
           tileCount++;
-          for (int i = 0; i < 10; i++) {
-            GameObject activePrefab = Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(groundPosition.transform.position.x + (Random.Range(-4, 4)), groundPosition.transform.position.y - (30 * tileCount), groundPosition.transform.position.z + Random.Range(40,64) * tileCount), Quaternion.identity) as GameObject;
+          for (int i = 0; i < 4; i++) {
+            GameObject activePrefab = Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(groundPosition.transform.position.x + (Random.Range(-4, 4)), groundPosition.transform.position.y - (45 * tileCount), groundPosition.transform.position.z + Random.Range(40,64) * tileCount), Quaternion.identity) as GameObject;
             activePrefab.transform.rotation = groundPosition.transform.rotation;
             pickuplist.Add(activePrefab);
           }

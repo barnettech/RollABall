@@ -279,7 +279,7 @@ MonoBehaviour:
   title: 
   description: 
   prefabs:
-  - {fileID: 1783865551502552, guid: 2641e848db4bc4145b276b6a183a8a55, type: 2}
+  - {fileID: 1305410896935532, guid: 55643d327a754064cad3bd7332b64918, type: 2}
   spawnDistance: 0
   cratelist: []
 --- !u!65 &177305155
